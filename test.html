@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pharmacy Benefit Coding</title>
+<style>
+    .btn {
+      background-color: DodgerBlue;
+      border: none;
+      color: white;
+      padding: 12px 16px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    /* Darker background on mouse-over */
+    .btn:hover {
+      background-color: RoyalBlue;
+    }
+    </style>
+    </head>
+</head>
+<body>
+<div class="container">
+  <h2>Pharmacy Benefit Coding</h2>
+  <p>The Pharmacy Coding Execution team (PCE) works on Commercial Line of Business and is responsible for intaking work from upstream implementation coordinators and translating the intent of our groups, into appropriate benefit configuration within our benefit systems. Additionally, they are typically the first point of contact for clarification questions surrounding benefits from our up streams.</p>
+  
+  <h3>Pharmacy Benefit Definition</h3>
+  <p>Pharmacy Benefit: RX benefit, or plan is defined as a list of items, services or features included or excluded under the pharmacy portion of the health insurance, specifying all details and terms of the RX coverage. A group or client can create multiple different benefit designs, as well as multiple groups or clients can share the same benefit design. “Pharmacy benefit deductible is separate from medical in majority of cases”</p>
+  
+  <h3>Objective</h3>
+  <p>The objective of the Benefit Coding is to ensure that all Rx benefits to be configured to plan as per client requirement. Coding process includes Spider, Benefit Central, Benefit Builder and Pharmacy Benefit Quality (Audit). All these coding process intent is to code or configured and validate the given Rx benefits to the member plan.</p>
+  
+  <h3>Benefit Repositories</h3>
+  <table border="1">
+    <tr>
+      <th>Benefit System</th>
+      <th>Purpose</th>
+    </tr>
+    <tr>
+      <td>Benefit Central (BC)</td>
+      <td>Benefit Central is a web-based application that PBM uses to administer pharmacy benefits. Pharmacy benefits determine all the features on how drug claims adjudicate when a member goes to a pharmacy to fill a prescription.</td>
+    </tr>
+    <tr>
+      <td>Spider</td>
+      <td>(Strategic Product Information Data Enterprise Repository) is the Product and Benefits system used to house benefit information for small group individual and ACA exchange business.</td>
+    </tr>
+    <tr>
+      <td>Benefit Builder</td>
+      <td>Houses RX benefit information for Large Group and National Accounts</td>
+    </tr>
+  </table>
+  
+  <h3>Benefit Coding Upstream Systems</h3>
+  <ul>
+    <li>Sales Team: Sales team will assign the projects through COM2 and Jira. Team reviews the member request and send those requirements in the form of paperwork (SOB/SBC/CEP/GSF/ASF)</li>
+  </ul>
+  
+  <h3>Benefit Coding Process Cycle</h3>
+  <p>Process Flow: COM2 Assignment→ Create JIRA→ Coding→ Update Intake/CFAN→ Benefit Tracker→ Table Update or CCS Link or Account Structure update→ Close JIRA and COM2</p>
+  
+  <h3>Applications Used in Benefit Coding Configuration Process</h3>
+  <ul>
+    <li>COM2: COM2 (Commercial2) is a system that sales team update the group information and benefits and used to get the inventory for the group size less than 250 and create pending correction for any clarifications in COM2.</li>
+    <li>JIRA: JIRA is a tool developed by Atlassian. It is a web-based application and used to get the inventory for the group size greater than 250+ and also to create the sub task for any clarifications in Jira.</li>
+    <li>Benefit Tracker: It is tool that is used for auditing the Proxies.</li>
+    <li>QA Log: It is a web-based application used to determine the plan completion status.</li>
+    <li>CCS Linking: CCS linking is done once the proxy moved to production.</li>
+    <li>eCEM: Enterprise Customer Exception Management - eCEM is a document which has Exception listed for that particular group/states.</li>
+  </ul>
+  
+  <h3>Benefit Coding Process Flow</h3>
+  <img src="process_flow_diagram.jpg" alt="Benefit Coding Process Flow Diagram">
+  
+  <!-- Buttons to show table and images -->
+  <button class="button" onclick="showTable()">Show Table</button>
+  <button class="button" onclick="showImage1()">Show Image 1</button>
+  <button class="button" onclick="showImage2()">Show Image 2</button>
+  
+  <!-- Placeholder for displaying table and images -->
+  <div id="table" style="display:none;">
+    <!-- Table will be displayed here -->
+  </div>
+  <div id="image1" style="display:none;">
+    <img src="image1.jpg" alt="Image 1">
+  </div>
+  <div id="image2" style="display:none;">
+    <img src="image2.jpg" alt="Image 2">
+  </div>
+</div>
+
+<script>
+  function showTable() {
+    document.getElementById('table').style.display = 'block';
+    document.getElementById('image1').style.display = 'none';
+    document.getElementById('image2').style.display = 'none';
+  }
+
+  function showImage1() {
+    document.getElementById('table').style.display = 'none';
+    document.getElementById('image1').style.display = 'block';
+    document.getElementById('image2').style.display = 'none';
+  }
+
+  function showImage2() {
+    document.getElementById('table').style.display = 'none';
+    document.getElementById('image1').style.display = 'none';
+    document.getElementById('image2').style.display = 'block';
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile Cards Slider</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@splidejs/splide@3.0.9/dist/css/splide.min.css">
+  <style>
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 80px;
+      }
+  
+      .card {
+        font-family: 'Quattrocento', Arial, sans-serif;
+        position: relative;
+        overflow: hidden;
+        margin: 30px;
+        min-width: 230px;
+        max-width: 315px;
+        width: 100%;
+        color: #141414;
+        text-align: left;
+        line-height: 1.4em;
+        font-size: 16px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+  
+      .card img {
+        max-width: 100%;
+        vertical-align: top;
+      }
+  
+      .card figcaption {
+        width: 100%;
+        background-color: #ffffff;
+        padding: 15px 25px 65px;
+        position: relative;
+      }
+  
+      .card figcaption:before {
+        position: absolute;
+        content: '';
+        z-index: 2;
+        bottom: 100%;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background-image: -webkit-linear-gradient(top, transparent 0%, #ffffff 100%);
+        background-image: linear-gradient(to bottom, transparent 0%, #ffffff 100%);
+      }
+  
+      .card h2,
+      .card p {
+        margin: 0 0 10px;
+      }
+  
+      .card h2 {
+        font-weight: 300;
+        font-size: 1.5em;
+        line-height: 1.2em;
+        font-family: 'Oswald', Arial, sans-serif;
+        text-transform: uppercase;
+      }
+  
+      .card p {
+        font-size: 0.9em;
+        letter-spacing: 1px;
+        opacity: 0.9;
+      }
+  
+      .card .icons {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #e6e6e6;
+        width: 100%;
+        text-align: center;
+      }
+  
+      .card i {
+        padding: 10px 5px;
+        display: inline-block;
+        font-size: 24px;
+        color: #141414;
+        opacity: 0.65;
+      }
+  
+      .card i:hover {
+        opacity: 1;
+        transition: all 0.35s ease;
+      } 
+   </style>
+</head>
+<body>
+
+<h2 style="text-align:center">User Profile Cards Slider</h2>
+
+<div id="splide" class="splide">
+  <div class="splide__track">
+    <ul class="splide__list">
+      <!-- Add more profile cards as needed -->
+      <li class="splide__slide">
+        <div class="card">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample17">
+          <figcaption>
+            <h2>Linguina Nettlewater</h2>
+            <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <div class="icons">
+              <a href="#"><i class="ion-social-reddit-outline"></i></a>
+              <a href="#"><i class="ion-social-twitter-outline"></i></a>
+              <a href="#"><i class="ion-social-vimeo-outline"></i></a>
+            </div>
+          </figcaption>
+        </div>
+      </li>
+      <!-- Add more profile cards as needed -->
+      <li class="splide__slide">
+        <div class="card">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample17">
+          <figcaption>
+            <h2>Linguina Nettlewater</h2>
+            <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <div class="icons">
+              <a href="#"><i class="ion-social-reddit-outline"></i></a>
+              <a href="#"><i class="ion-social-twitter-outline"></i></a>
+              <a href="#"><i class="ion-social-vimeo-outline"></i></a>
+            </div>
+          </figcaption>
+        </div>
+      </li>
+      <li class="splide__slide">
+        <div class="card">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample17">
+          <figcaption>
+            <h2>Linguina Nettlewater</h2>
+            <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <div class="icons">
+              <a href="#"><i class="ion-social-reddit-outline"></i></a>
+              <a href="#"><i class="ion-social-twitter-outline"></i></a>
+              <a href="#"><i class="ion-social-vimeo-outline"></i></a>
+            </div>
+          </figcaption>
+        </div>
+      </li>
+      <li class="splide__slide">
+        <div class="card">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample17">
+          <figcaption>
+            <h2>Linguina Nettlewater</h2>
+            <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <div class="icons">
+              <a href="#"><i class="ion-social-reddit-outline"></i></a>
+              <a href="#"><i class="ion-social-twitter-outline"></i></a>
+              <a href="#"><i class="ion-social-vimeo-outline"></i></a>
+            </div>
+          </figcaption>
+        </div>
+      </li>
+      <li class="splide__slide">
+        <div class="card">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample17">
+          <figcaption>
+            <h2>Linguina Nettlewater</h2>
+            <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <div class="icons">
+              <a href="#"><i class="ion-social-reddit-outline"></i></a>
+              <a href="#"><i class="ion-social-twitter-outline"></i></a>
+              <a href="#"><i class="ion-social-vimeo-outline"></i></a>
+            </div>
+          </figcaption>
+        </div>
+      </li>
+      <li class="splide__slide">
+        <div class="card">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample17">
+          <figcaption>
+            <h2>Linguina Nettlewater</h2>
+            <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <div class="icons">
+              <a href="#"><i class="ion-social-reddit-outline"></i></a>
+              <a href="#"><i class="ion-social-twitter-outline"></i></a>
+              <a href="#"><i class="ion-social-vimeo-outline"></i></a>
+            </div>
+          </figcaption>
+        </div>
+      </li>
+      <li class="splide__slide">
+        <div class="card">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample17">
+          <figcaption>
+            <h2>Linguina Nettlewater</h2>
+            <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <div class="icons">
+              <a href="#"><i class="ion-social-reddit-outline"></i></a>
+              <a href="#"><i class="ion-social-twitter-outline"></i></a>
+              <a href="#"><i class="ion-social-vimeo-outline"></i></a>
+            </div>
+          </figcaption>
+        </div>
+      </li>
+      <li class="splide__slide">
+        <div class="card">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample17">
+          <figcaption>
+            <h2>Linguina Nettlewater</h2>
+            <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <div class="icons">
+              <a href="#"><i class="ion-social-reddit-outline"></i></a>
+              <a href="#"><i class="ion-social-twitter-outline"></i></a>
+              <a href="#"><i class="ion-social-vimeo-outline"></i></a>
+            </div>
+          </figcaption>
+        </div>
+      </li>
+     
+    </ul>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.9/dist/js/splide.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Splide('#splide', {
+      type: 'loop',
+      perPage: 3, // Show three cards at a time
+      autoplay: true,
+      interval: 15000, // How long to display each slide
+      pauseOnHover: false, // must be false
+      pauseOnFocus: false, // must be false
+      resetProgress: false
+    }).mount();
+  });
+</script>
+
+</body>
+</html>
+<!-- here inbetween image inhave more soace need to arrnage the images properly in the center  -->
+

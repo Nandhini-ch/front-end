@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile Cards</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <style>
+    body {
+      background: white;
+      font-family: "Comfortaa", sans-serif;
+      min-height: 100vh;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .card-container {
+        display: flex;
+        overflow-x: auto; /* Enable horizontal scrolling */
+        scrollbar-width: none; /* Hide scrollbar for better appearance */
+        -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+      }
+      
+      .card-container::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Chrome/Safari */
+      }
+      
+      .card {
+        font-family: 'Quattrocento', Arial, sans-serif;
+        position: relative;
+        overflow: hidden;
+        margin: 10px;
+        min-width: 430px;
+        max-width: 515px;
+        width: 100%;
+        color: black;
+        text-align: left;
+        line-height: 1.4em;
+        font-size: 16px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+      
+      
+
+    .main-content {
+      text-align: center;
+      padding-bottom: 3em;
+    }
+
+    .options {
+      width: 75%;
+      left: 25%;
+      display: flex;
+      overflow-y: hidden;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      position: relative;
+      padding: 4em 2em 0 0;
+    }
+
+    .options__wrapper {
+      margin: auto;
+      position: relative;
+      max-width: 1200px;
+    }
+
+    .options__item {
+      margin: 40px 20px;
+      min-width: 17em;
+      scroll-snap-align: center;
+      background: #f8f8f8;
+      height: 400px;
+      border-radius: 20px;
+    }
+
+    .options__item:last-child {
+      min-width: 8.5em;
+      margin: 0;
+      background: transparent;
+      pointer-events: none;
+    }
+
+    /* Your card type specific background styles */
+    .options__item[data-type="strength"] {
+      background: url(https://meowlivia.s3.us-east-2.amazonaws.com/codepen/background/red.png) top center;
+      background-size: 180%;
+    }
+
+    .options__item[data-type="agility"] {
+      background: url(https://meowlivia.s3.us-east-2.amazonaws.com/codepen/background/green.png) top center / cover;
+      background-size: 220%;
+    }
+
+    .options__item[data-type="intelligence"] {
+      background: url(https://meowlivia.s3.us-east-2.amazonaws.com/codepen/background/blue.png) top center / cover;
+      background-size: 100%;
+    }
+
+    .options__item img {
+      height: 400px;
+      width: 300px;
+      object-fit: contain;
+      top: -40px;
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      margin-left: -15px;
+    }
+
+    /* Responsive adjustments */
+    @media screen and (max-width: 750px) {
+      .options__item:last-child {
+        display: none;
+      }
+    }
+
+    /* Scrollbar styles */
+    ::-webkit-scrollbar {
+      height: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 40px;
+      margin: 0 160px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 40px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+<div class="card-container">
+        <figure class="card">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample17">
+          <figcaption>
+            <h2>Linguina Nettlewater</h2>
+            <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+            <div class="icons">
+              <a href="#"><i class="ion-social-reddit-outline"></i></a>
+              <a href="#"><i class="ion-social-twitter-outline"></i></a>
+              <a href="#"><i class="ion-social-vimeo-outline"></i></a>
+            </div>
+          </figcaption>
+        </figure>
+        <!-- Repeat the figure element for each card -->
+      <!-- Add more card items as needed -->
+      <figure class="card">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample17">
+        <figcaption>
+          <h2>Linguina Nettlewater</h2>
+          <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+          <div class="icons">
+            <a href="#"><i class="ion-social-reddit-outline"></i></a>
+            <a href="#"><i class="ion-social-twitter-outline"></i></a>
+            <a href="#"><i class="ion-social-vimeo-outline"></i></a>
+          </div>
+        </figcaption>
+      </figure>
+        <figure class="card">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample47">
+          <figcaption>
+            <h2>Max Conversion</h2>
+            <p>Calvin: I'm a genius, but I'm a misunderstood genius. Hobbes: What's misunderstood about you? Calvin: Nobody thinks I'm a genius.</p>
+            <div class="icons">
+              <a href="#"><i class="ion-social-reddit-outline"></i></a>
+              <a href="#"><i class="ion-social-twitter-outline"></i></a>
+              <a href="#"><i class="ion-social-vimeo-outline"></i></a>
+            </div>
+          </figcaption>
+        </figure>
+        <figure class="card">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample17">
+            <figcaption>
+              <h2>Linguina Nettlewater</h2>
+              <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+              <div class="icons">
+                <a href="#"><i class="ion-social-reddit-outline"></i></a>
+                <a href="#"><i class="ion-social-twitter-outline"></i></a>
+                <a href="#"><i class="ion-social-vimeo-outline"></i></a>
+              </div>
+            </figcaption>
+          </figure>
+            <figure class="card">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample47">
+              <figcaption>
+                <h2>Max Conversion</h2>
+                <p>Calvin: I'm a genius, but I'm a misunderstood genius. Hobbes: What's misunderstood about you? Calvin: Nobody thinks I'm a genius.</p>
+                <div class="icons">
+                  <a href="#"><i class="ion-social-reddit-outline"></i></a>
+                  <a href="#"><i class="ion-social-twitter-outline"></i></a>
+                  <a href="#"><i class="ion-social-vimeo-outline"></i></a>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="card">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample17">
+                <figcaption>
+                  <h2>Linguina Nettlewater</h2>
+                  <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+                  <div class="icons">
+                    <a href="#"><i class="ion-social-reddit-outline"></i></a>
+                    <a href="#"><i class="ion-social-twitter-outline"></i></a>
+                    <a href="#"><i class="ion-social-vimeo-outline"></i></a>
+                  </div>
+                </figcaption>
+              </figure>
+                <figure class="card">
+                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample47">
+                  <figcaption>
+                    <h2>Max Conversion</h2>
+                    <p>Calvin: I'm a genius, but I'm a misunderstood genius. Hobbes: What's misunderstood about you? Calvin: Nobody thinks I'm a genius.</p>
+                    <div class="icons">
+                      <a href="#"><i class="ion-social-reddit-outline"></i></a>
+                      <a href="#"><i class="ion-social-twitter-outline"></i></a>
+                      <a href="#"><i class="ion-social-vimeo-outline"></i></a>
+                    </div>
+                  </figcaption>
+                </figure>
+                <figure class="card">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample17">
+                    <figcaption>
+                      <h2>Linguina Nettlewater</h2>
+                      <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello?</p>
+                      <div class="icons">
+                        <a href="#"><i class="ion-social-reddit-outline"></i></a>
+                        <a href="#"><i class="ion-social-twitter-outline"></i></a>
+                        <a href="#"><i class="ion-social-vimeo-outline"></i></a>
+                      </div>
+                    </figcaption>
+                  </figure>
+                    <figure class="card">
+                      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample47.jpg" alt="sample47">
+                      <figcaption>
+                        <h2>Max Conversion</h2>
+                        <p>Calvin: I'm a genius, but I'm a misunderstood genius. Hobbes: What's misunderstood about you? Calvin: Nobody thinks I'm a genius.</p>
+                        <div class="icons">
+                          <a href="#"><i class="ion-social-reddit-outline"></i></a>
+                          <a href="#"><i class="ion-social-twitter-outline"></i></a>
+                          <a href="#"><i class="ion-social-vimeo-outline"></i></a>
+                        </div>
+                      </figcaption>
+                    </figure>
+    </div>
+  </div>
+</div>
+
+<!-- Include jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- jQuery code for horizontal scrolling with mouse wheel -->
+<script>
+  $(document).ready(function() {
+    $('#scroll-event').bind('mousewheel', function(e) {
+      this.scrollLeft -= (e.originalEvent.wheelDelta);
+    });
+    $('#scroll-event').bind('DOMMouseScroll', function(e) {
+      this.scrollLeft += (e.originalEvent.detail * 40);
+    });
+  });
+</script>
+
+</body>
+</html>

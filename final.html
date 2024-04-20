@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.btn-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.btn {
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: black;
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Pharmacy Benefit Coding</h2>
+  <p>The Pharmacy Coding Execution team (PCE) works on Commercial Line of Business and is responsible for intaking work from upstream implementation coordinators and translating the intent of our groups, into appropriate benefit configuration within our benefit systems. Additionally, they are typically the first point of contact for clarification questions surrounding benefits from our up streams.</p>
+  
+  <h3>Pharmacy Benefit Definition</h3>
+  <p>Pharmacy Benefit: RX benefit, or plan is defined as a list of items, services or features included or excluded under the pharmacy portion of the health insurance, specifying all details and terms of the RX coverage. A group or client can create multiple different benefit designs, as well as multiple groups or clients can share the same benefit design. “Pharmacy benefit deductible is separate from medical in majority of cases”</p>
+  
+  <h3>Objective</h3>
+  <p>The objective of the Benefit Coding is to ensure that all Rx benefits to be configured to plan as per client requirement. Coding process includes Spider, Benefit Central, Benefit Builder and Pharmacy Benefit Quality (Audit). All these coding process intent is to code or configured and validate the given Rx benefits to the member plan.</p>
+</div>
+
+<div class="btn-container">
+  <button class="btn" onclick="showTable()"><i class="fa fa-table"></i> Table</button>
+  <button class="btn" onclick="showImage1()"><i class="fas fa-project-diagram"></i> Image 1</button>
+  <button class="btn" onclick="showImage2()"><i class="fas fa-tasks"></i> Image 2</button>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImg" src="" style="width:100%">
+  </div>
+</div>
+
+<script>
+
+// Get the modal
+var modal = document.getElementById("myModal");
+var modalImg = document.getElementById("modalImg");
+
+function showTable() {
+  modal.style.display = "block";
+  modalImg.src = "image.png";
+}
+
+function showImage1() {
+  modal.style.display = "block";
+  modalImg.src = "https://corporate-assets.lucid.co/chart/52bbddaa-59f2-4baa-84c3-ca458f8cbabb.png";
+}
+
+function showImage2() {
+  modal.style.display = "block";
+  modalImg.src = "https://www.cflowapps.com/wp-content/uploads/2021/06/improve_proceswork.jpg";
+}
+
+function closeModal() {
+  modal.style.display = "none";
+}
+</script>
+</body>
+</html>
