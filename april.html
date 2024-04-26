@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+    max-width: calc(100% - 400px); /* Adjust width to leave space for buttons */
+    margin: 0 auto;
+    padding: 5px; /* Reduce padding */
+    text-align: left;
+    float: left; /* Align content to the left */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.btn-container {
+    position: fixed; /* Fixed position to keep it on the right side */
+    top: 20px;
+    right: 20px;
+    width: 180px; /* Adjust width to fit buttons */
+    display: flex; /* Use flexbox for button layout */
+    flex-direction: column; /* Arrange buttons vertically */
+} 
+
+.btn {
+    background-color: orange;
+    border: none;
+    color: white;
+    padding: 12px 20px; /* Increased padding */
+    font-size: 18px; /* Increased font size */
+    cursor: pointer;
+    margin-bottom: 10px; /* Add some spacing between buttons */
+    text-align: left; /* Align button text to the left */
+    display: flex; /* Use flexbox to align icon and text */
+    align-items: center; /* Align items vertically */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+.btn i {
+    margin-right: 10px; /* Add space between icon and text */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+    background-color:black;
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* New CSS styles for table modal */
+.table-modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  position: relative; /* Ensure close button is positioned relative to modal content */
+}
+
+/* Adjusted style for close button */
+.table-modal-content .close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Pharmacy Benefit Coding</h2>
+  <p>The Pharmacy Coding Execution team (PCE) works on Commercial Line of Business and is responsible for intaking work from upstream implementation coordinators and translating the intent of our groups, into appropriate benefit configuration within our benefit systems. Additionally, they are typically the first point of contact for clarification questions surrounding benefits from our up streams.</p>
+  
+  <h3>Pharmacy Benefit Definition</h3>
+  <p>Pharmacy Benefit: RX benefit, or plan is defined as a list of items, services or features included or excluded under the pharmacy portion of the health insurance, specifying all details and terms of the RX coverage. A group or client can create multiple different benefit designs, as well as multiple groups or clients can share the same benefit design. “Pharmacy benefit deductible is separate from medical in majority of cases”</p>
+  
+  <h3>Objective</h3>
+  <p>The objective of the Benefit Coding is to ensure that all Rx benefits to be configured to plan as per client requirement. Coding process includes Spider, Benefit Central, Benefit Builder and Pharmacy Benefit Quality (Audit). All these coding process intent is to code or configured and validate the given Rx benefits to the member plan.</p>
+</div>
+
+<div class="btn-container">
+  <button class="btn" onclick="showTableModal()"><i class="fa fa-table"></i>Table</button>
+  <button class="btn" onclick="showImage1()"> Image 1</button>
+  <button class="btn" onclick="showImage2()"> Image 2</button>
+  <button class="btn" onclick="showImage3()"></i> Image 3</button>
+  <button class="btn" onclick="showImage4()"></i> Image 4</button>
+  <button class="btn" onclick="showImage5()"></i> Image 5</button>
+  <button class="btn" onclick="showImage6()"></i> Image 6</button>
+</div>
+
+<!-- The Modal for table -->
+<div id="tableModal" class="modal">
+  <!-- Modal content for table -->
+  <div class="table-modal-content">
+    <span class="close" onclick="closeTableModal()">&times;</span>
+    <div id="tableContent">
+      <table>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>John</td>
+      <td>30</td>
+      <td>USA</td>
+    </tr>
+    <tr>
+      <td>Alice</td>
+      <td>25</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Bob</td>
+      <td>40</td>
+      <td>UK</td>
+    </tr>
+  </table>
+    </div>
+  </div>
+</div>
+
+<!-- The Modal for images -->
+<div id="myModal" class="modal">
+  <!-- Modal content for images -->
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImg" src="" style="width:100%">
+  </div>
+</div>
+
+<script>
+  var tableModal = document.getElementById("tableModal");
+// Function to show table modal
+function showTableModal() {
+  tableModal.style.display = "block";
+
+}
+
+// Function to close table modal
+function closeTableModal() {
+  // Hide table
+  tableModal.style.display = "none";
+}
+
+// Get the modal
+var modal = document.getElementById("myModal");
+var modalImg = document.getElementById("modalImg");
+
+function showTable() {
+  modal.style.display = "block";
+  modalImg.src = "https://corporate-assets.lucid.co/chart/52bbddaa-59f2-4baa-84c3-ca458f8cbabb.png";
+}
+
+function showImage1() {
+  modal.style.display = "block";
+  modalImg.src = "https://corporate-assets.lucid.co/chart/52bbddaa-59f2-4baa-84c3-ca458f8cbabb.png";
+}
+
+function showImage2() {
+  modal.style.display = "block";
+  modalImg.src = "https://www.cflowapps.com/wp-content/uploads/2021/06/improve_proceswork.jpg";
+}
+
+function showImage3() {
+  modal.style.display = "block";
+  modalImg.src = "https://corporate-assets.lucid.co/chart/52bbddaa-59f2-4baa-84c3-ca458f8cbabb.png"; // Provide the URL for Image 3
+}
+
+function showImage4() {
+  modal.style.display = "block";
+  modalImg.src = "https://corporate-assets.lucid.co/chart/52bbddaa-59f2-4baa-84c3-ca458f8cbabb.png"; // Provide the URL for Image 4
+}
+
+function showImage5() {
+  modal.style.display = "block";
+  modalImg.src = "https://corporate-assets.lucid.co/chart/52bbddaa-59f2-4baa-84c3-ca458f8cbabb.png"; // Provide the URL for Image 5
+}
+
+function showImage6() {
+  modal.style.display = "block";
+  modalImg.src = "https://corporate-assets.lucid.co/chart/52bbddaa-59f2-4baa-84c3-ca458f8cbabb.png"; // Provide the URL for Image 6
+}
+
+function closeModal() {
+  modal.style.display = "none";
+}
+</script>
+</body>
+</html>

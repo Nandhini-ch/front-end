@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Slider</title>
+<style>
+  body {
+    background-color: white; /* Change this to your desired body background color */
+  }
+  #slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: black; /* Change this to your desired slider container background color */
+    padding: 20px; /* Add padding for better visual appearance */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+  }
+  #image-container {
+    flex: 1;
+    margin-right: 50px; 
+    position: relative;
+  }
+  #image-slider {
+    max-width: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+  #prev-btn, #next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 10px;
+    background-color: grey;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  #prev-btn {
+    left: 0;
+  }
+  #next-btn {
+    right: 0;
+  }
+  #content-container {
+    flex: 1;
+    margin-left: 20px;
+  }
+  #content {
+    text-align: center;
+    color: white;
+    
+  }
+</style>
+</head>
+<body>
+
+<div id="slider-container">
+  <div id="image-container">
+    <div id="image-slider">
+      <img src="image1.jpg" alt="Image 1">
+    </div>
+    <button id="prev-btn">&lt;</button>
+    <button id="next-btn">&gt;</button>
+  </div>
+  <div id="content-container">
+    <div id="content">
+      <p id="image-caption">Content for Image 1</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const images = ["parrot.jpeg", "lion.jpeg"]; // Update with your image URLs
+  const captions = ["The parrots are a broad order of more than 350 birds. Macaws, Amazons, lorikeets, lovebirds, cockatoos and many others are all considered parrots. nationalgeographic.com", 
+  "Lions are the only cats that live in groups, which are called prides. Prides are family units that may include up to three males, a dozen or so females, and their young. All of a pride's lionesses are related, and female cubs typically stay with the group as they age. Young males eventually leave and establish their own prides by taking over a group headed by another male. nationalgeographic.com"]; // Update with corresponding content
+
+  let currentIndex = 0;
+  const slider = document.getElementById("image-slider");
+  const caption = document.getElementById("image-caption");
+
+  function showImage(index) {
+    slider.innerHTML = `<img src="${images[index]}" alt="Image ${index + 1}">`;
+    caption.textContent = captions[index];
+  }
+
+  showImage(currentIndex); // Initial image display
+
+  document.getElementById("prev-btn").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  });
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  });
+</script>
+
+</body>
+</html>
+
